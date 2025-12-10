@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  color: white;
+  transition: 0.5s;
+}
+
+/* Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #e0e0e0;
+}
+
+.container {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.12);
+  padding: 30px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+/* Timer Circle */
+.circle {
+  width: 240px;
+  height: 240px;
+  margin: 20px auto;
+  position: relative;
+}
+
+svg {
+  width: 240px;
+  height: 240px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 15;
+  stroke: rgba(255,255,255,0.2);
+  stroke-linecap: round;
+}
+
+#progress {
+  stroke: url(#gradient);
+  stroke-dasharray: 690;
+  stroke-dashoffset: 690;
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Timer Text */
+.time-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+/* Buttons */
+.buttons button,
+.mode-buttons button,
+.custom-input button,
+.theme-btn {
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.25);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.buttons button:hover,
+.mode-buttons button:hover,
+.custom-input button:hover,
+.theme-btn:hover {
+  background: rgba(255,255,255,0.4);
+  box-shadow: 0 0 10px white;
+}
+
+.mode-buttons .active {
+  background: #4b7bec;
+}
+
+.custom-input input {
+  padding: 10px;
+  width: 120px;
+  border-radius: 12px;
+  border: none;
+  margin-right: 5px;
+}
+
+/* Session count */
+.session-count {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Theme Button */
+.theme-btn {
+  margin-top: 15px;
+}
